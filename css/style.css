@@ -327,7 +327,7 @@ body._lock {
   border-left: 1px solid #e8e8e8;
 }
 .filter__btn {
-  padding: 5px;
+  padding: 0px;
 }
 .filter__btn button {
   cursor: pointer;

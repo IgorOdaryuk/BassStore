@@ -16,7 +16,7 @@ ul {
 
 :root { 
     --bg-color: #121b25;
-    --accent-color: #1aa090;
+    --accent-color: #c1b100;
     --text-color: #d6d6d6;
 }
 
@@ -247,3 +247,100 @@ body {
 /*-HERO-*/
 
 
+/*-FILTER-*/
+
+.filter {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 165px;
+    color: #000;
+
+    &__block {
+        &:nth-child(2) {
+            border-right: 1px solid #E8E8E8;
+            border-left: 1px solid #E8E8E8;
+        }
+    }
+
+    &__btn {
+        padding: 5px;
+        button {
+            cursor: pointer;
+            background-color: var(--accent-color);
+            height: 100%;
+            width: 100%;
+            border: none;
+            font-weight: 500;
+            font-size: 24px;
+            text-transform: capitalize;
+            color: #FFFFFF;
+        }
+    }
+}
+
+.block-filter{
+    position: relative;
+
+    &__button {
+        display: flex;
+        padding-left: 40px;
+        justify-content: center;
+        height: 100%;
+        flex-direction: column;
+    }
+
+    &__header { 
+        display: flex;
+        align-items: center;
+    }
+
+    &__type {
+        padding-right: 2px;
+        font-size: 16px;
+        color: #858585;
+        
+    }
+
+    &__icon {
+        width: 10px;
+        height: 7px;
+        background: url("../img/icons/arrow-dropdown.svg") center bottom no-repeat;
+    }
+
+    &__value {
+        color: var(--bg-color);
+        font-weight: 600;
+        font-size: 18px;
+        text-transform: capitalize;
+    }
+
+    &__dropdown {
+        position: absolute;
+        top: 105%;
+        right: 0;
+        left: 0;
+        background-origin: #fff;
+        border-radius: 5px;
+        overflow: hidden;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: all .2s;
+        &._active {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: all;
+            transform: translateY(5px);
+        }
+    }
+
+    &__item {
+        padding: 10px;
+        transition: all .2s;
+
+        @media(any-hover: hover) {
+            &:hover {
+                background-color: #adadad;
+            }
+        }
+    }
+}
