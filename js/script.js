@@ -29,21 +29,30 @@ if (filter) {
     })
 }
 
-const swiper = new swiper('.popular-slider', {
-    spaceBetween: 20,
-    slidesPerView: 1,
-    //loop: true,
+const popularSlider = new Swiper('.popular-slider', {
+	spaceBetween: 20,
+	slidesPerView: 1,
+	// Navigation arrows
+	navigation: {
+		nextEl: '.popular-slider-next',
+		prevEl: '.popular-slider-prev',
+	},
+	breakpoints: {
+		992: {
+			slidesPerView: 3,
+		},
+		660: {
+			slidesPerView: 2,
+		}
+	}
+});
 
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-    },
-    breakpoints: {
-        992: {
-            slidesPerView: 3,
-        },
-        660: {
-        slidesPerView: 3,
-        }
-    }
+const reviewsSlider = new Swiper('.slider-reviews', {
+	spaceBetween: 20,
+	slidesPerView: 1,
+	autoHeight: true,
+	navigation: {
+		nextEl: '.slider-reviews-next',
+		prevEl: '.slider-reviews-prev',
+	},
 });
